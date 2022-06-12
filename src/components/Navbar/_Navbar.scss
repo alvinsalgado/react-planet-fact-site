@@ -1,0 +1,198 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  .hamburger {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &.remove {
+      display: none;
+    }
+  }
+
+  .navbar-desktop-links {
+    display: none;
+  }
+}
+.navbar-mobile {
+  &-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+    background-color: $very-darkish-blue;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25em 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      a {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $light-gray;
+        }
+      }
+    }
+
+    .circle {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      position: relative;
+      top: 6px;
+      margin-right: 1.5625em;
+      display: inline-block;
+    }
+    .circle-mercury {
+      background-color: $light-teal;
+    }
+    .circle-venus {
+      background-color: $light-yellow;
+    }
+    .circle-earth {
+      background-color: $light-purple;
+    }
+    .circle-mars {
+      background-color: $light-orange;
+    }
+    .circle-jupiter {
+      background-color: $dark-red;
+    }
+    .circle-saturn {
+      background-color: $dark-orange;
+    }
+    .circle-uranus {
+      background-color: $dark-teal;
+    }
+    .circle-neptune {
+      background-color: $dark-blue;
+    }
+    .chevron {
+      img {
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 2em 3.25em 1.6em;
+    .logo {
+      margin-bottom: 1.3em;
+    }
+    .hamburger {
+      display: none;
+    }
+
+    .navbar-desktop-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      a {
+        padding-bottom: 2.6em;
+      }
+      .mercury-border {
+        color: $white;
+        border-bottom: 4px solid $light-teal;
+      }
+      .venus-border {
+        color: $white;
+        border-bottom: 4px solid $light-yellow;
+      }
+      .earth-border {
+        color: $white;
+        border-bottom: 4px solid $light-purple;
+      }
+      .mars-border {
+        color: $white;
+        border-bottom: 4px solid $light-orange;
+      }
+      .jupiter-border {
+        color: $white;
+        border-bottom: 4px solid $dark-red;
+      }
+      .saturn-border {
+        color: $white;
+        border-bottom: 4px solid $dark-orange;
+      }
+      .uranus-border {
+        color: $white;
+        border-bottom: 4px solid $dark-teal;
+      }
+      .neptune-border {
+        color: $white;
+        border-bottom: 4px solid $dark-blue;
+      }
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.375em 2em 1.6em;
+
+    .logo {
+      margin-bottom: 0;
+    }
+
+    .navbar-desktop-links {
+      width: 55%;
+
+      a {
+        padding-top: 2.6em;
+      }
+      .mercury-border {
+        border-bottom: none;
+        border-top: 4px solid $light-teal;
+      }
+      .venus-border {
+        border-bottom: none;
+        border-top: 4px solid $light-yellow;
+      }
+      .earth-border {
+        border-bottom: none;
+        border-top: 4px solid $light-purple;
+      }
+      .mars-border {
+        border-bottom: none;
+        border-top: 4px solid $light-orange;
+      }
+      .jupiter-border {
+        border-bottom: none;
+        border-top: 4px solid $dark-red;
+      }
+      .saturn-border {
+        border-bottom: none;
+        border-top: 4px solid $dark-orange;
+      }
+      .uranus-border {
+        border-bottom: none;
+        border-top: 4px solid $dark-teal;
+      }
+      .neptune-border {
+        border-bottom: none;
+        border-top: 4px solid $dark-blue;
+      }
+    }
+  }
+}
