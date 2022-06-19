@@ -1,0 +1,122 @@
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-gray;
+  padding-inline: 1em;
+  grid-area: tabs;
+}
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  padding: 2.083em;
+  cursor: pointer;
+  &:hover {
+    background-color: $dark-gray;
+  }
+
+  span {
+    display: none;
+  }
+}
+.active-tab-mercury {
+  color: $white;
+  border-bottom: 4px solid $light-teal;
+}
+.active-tab-venus {
+  color: $white;
+
+  border-bottom: 4px solid $light-yellow;
+}
+.active-tab-earth {
+  color: $white;
+
+  border-bottom: 4px solid $light-purple;
+}
+.active-tab-mars {
+  color: $white;
+
+  border-bottom: 4px solid $light-orange;
+}
+.active-tab-jupiter {
+  color: $white;
+
+  border-bottom: 4px solid $dark-red;
+}
+.active-tab-saturn {
+  color: $white;
+
+  border-bottom: 4px solid $dark-orange;
+}
+.active-tab-uranus {
+  color: $white;
+
+  border-bottom: 4px solid $dark-teal;
+}
+.active-tab-neptune {
+  color: $white;
+
+  border-bottom: 4px solid $dark-blue;
+}
+@media (min-width: 768px) {
+  .tab-container {
+    // grid-area: tabs;
+    flex-direction: column;
+    border-bottom: none;
+    padding: 0;
+    max-width: 380px;
+    width: 100%;
+    align-self: center;
+    justify-self: end;
+  }
+  .tab-btn {
+    display: flex;
+    padding: 0.8em 10em 0.8em 1.25em;
+    margin-bottom: 1.67em;
+    border: 1px solid $dark-gray;
+    color: $white;
+    span {
+      color: $white;
+      opacity: 0.5;
+      display: block;
+      padding-right: 1.5em;
+    }
+  }
+
+  .active-tab-mercury {
+    background-color: $light-teal;
+  }
+  .active-tab-venus {
+    background-color: $light-yellow;
+  }
+  .active-tab-earth {
+    background-color: $light-purple;
+  }
+  .active-tab-mars {
+    background-color: $light-orange;
+  }
+  .active-tab-jupiter {
+    background-color: $dark-red;
+  }
+  .active-tab-saturn {
+    background-color: $dark-orange;
+  }
+  .active-tab-uranus {
+    background-color: $dark-teal;
+  }
+  .active-tab-neptune {
+    background-color: $dark-blue;
+  }
+}
+@media (min-width: 1000px) {
+  .tab-container {
+    max-width: inherit;
+    place-self: start;
+  }
+  .tab-btn {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    span {
+      padding-right: 2.3em;
+    }
+  }
+}
