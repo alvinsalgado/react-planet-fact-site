@@ -1,0 +1,42 @@
+.facts-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+  max-width: inherit;
+  width: 100%;
+  grid-area: fact;
+}
+.fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 1.5em;
+  border: 1px solid $dark-gray;
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .facts-container {
+    grid-area: fact;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    place-self: start;
+  }
+
+  .fact {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1em 3em 1.2em 0.94em;
+    margin-bottom: 0;
+    max-width: 164px;
+    width: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .fact {
+    max-width: 255px;
+    width: 100%;
+  }
+}
