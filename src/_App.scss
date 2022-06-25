@@ -126,15 +126,20 @@ img {
 .grid-container {
   text-align: center;
   display: grid;
-  grid-template-rows: min-content minmax(400px, 1fr) min-content min-content;
+  // grid-template-rows: min-content minmax(400px, 1fr) min-content min-content;
   padding-bottom: 2em;
   min-height: 100vh;
+  grid-template-areas:
+    'tabs'
+    'image'
+    'info'
+    'fact';
 }
 
 @media (min-width: 768px) {
   .grid-container {
     padding: 0 2.5em 2em;
-    grid-template-rows: 1.5fr 1fr min-content;
+    // grid-template-rows: 1.5fr 1fr min-content;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'image image'
@@ -172,8 +177,9 @@ img {
   .grid-container {
     padding: 0 1em 2em;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 2fr 1fr min-content;
+    // grid-template-rows: 2fr 1fr min-content;
     grid-template-areas:
+      'image .'
       'image info'
       'image tabs'
       'fact fact';
