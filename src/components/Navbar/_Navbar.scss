@@ -107,39 +107,52 @@
       width: 100%;
 
       a {
-        padding-bottom: 2.6em;
+        position: relative;
       }
-      .mercury-border {
-        color: $white;
-        border-bottom: 4px solid $light-teal;
+      a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        top: 41px;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
       }
-      .venus-border {
+      a.active {
         color: $white;
-        border-bottom: 4px solid $light-yellow;
       }
-      .earth-border {
-        color: $white;
-        border-bottom: 4px solid $light-purple;
+      a.active::before,
+      a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
       }
-      .mars-border {
-        color: $white;
-        border-bottom: 4px solid $light-orange;
+      .mercury-border::before {
+        background-color: $light-teal;
       }
-      .jupiter-border {
-        color: $white;
-        border-bottom: 4px solid $dark-red;
+      .venus-border::before {
+        background-color: $light-yellow;
       }
-      .saturn-border {
-        color: $white;
-        border-bottom: 4px solid $dark-orange;
+      .earth-border::before {
+        background-color: $light-purple;
       }
-      .uranus-border {
-        color: $white;
-        border-bottom: 4px solid $dark-teal;
+      .mars-border::before {
+        background-color: $light-orange;
       }
-      .neptune-border {
-        color: $white;
-        border-bottom: 4px solid $dark-blue;
+      .jupiter-border::before {
+        background-color: $dark-red;
+      }
+      .saturn-border::before {
+        background-color: $dark-orange;
+      }
+      .uranus-border::before {
+        background-color: $dark-teal;
+      }
+      .neptune-border::before {
+        background-color: $dark-blue;
       }
     }
   }
@@ -158,40 +171,8 @@
     .navbar-desktop-links {
       width: 55%;
 
-      a {
-        padding-top: 2.6em;
-      }
-      .mercury-border {
-        border-bottom: none;
-        border-top: 4px solid $light-teal;
-      }
-      .venus-border {
-        border-bottom: none;
-        border-top: 4px solid $light-yellow;
-      }
-      .earth-border {
-        border-bottom: none;
-        border-top: 4px solid $light-purple;
-      }
-      .mars-border {
-        border-bottom: none;
-        border-top: 4px solid $light-orange;
-      }
-      .jupiter-border {
-        border-bottom: none;
-        border-top: 4px solid $dark-red;
-      }
-      .saturn-border {
-        border-bottom: none;
-        border-top: 4px solid $dark-orange;
-      }
-      .uranus-border {
-        border-bottom: none;
-        border-top: 4px solid $dark-teal;
-      }
-      .neptune-border {
-        border-bottom: none;
-        border-top: 4px solid $dark-blue;
+      a::before {
+        top: -33px;
       }
     }
   }

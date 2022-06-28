@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { data, images } from '../../utils';
 
 const Navbar = ({ active, setActive }) => {
@@ -17,27 +17,33 @@ const Navbar = ({ active, setActive }) => {
           return (
             <li className='fs-400' key={id}>
               <div>
-                <Link
+                <NavLink
                   onClick={() => {
                     setActive(index);
                   }}
                   to={url}
-                  className={`fs-400 ${active === index ? `${name}-border` : ''}`}
+                  className={`fs-400 ${`${name}-border`}`}
                 >
                   {name}
-                </Link>
+                </NavLink>
               </div>
             </li>
           );
         })}
       </ul>
 
-      <button className={`hamburger ${toggleMenu ? 'remove' : ''}`} onClick={() => setToggleMenu(!toggleMenu)}>
+      <button
+        className={`hamburger ${toggleMenu ? 'remove' : ''}`}
+        onClick={() => setToggleMenu(!toggleMenu)}
+      >
         <img src={images.hamburger} alt='open' />
       </button>
       {toggleMenu && (
         <div className='navbar-mobile'>
-          <button className='hamburger' onClick={() => setToggleMenu(!toggleMenu)}>
+          <button
+            className='hamburger'
+            onClick={() => setToggleMenu(!toggleMenu)}
+          >
             <img src={images.close} alt='close' />
           </button>
 
@@ -48,7 +54,7 @@ const Navbar = ({ active, setActive }) => {
                 <li key={id}>
                   <div>
                     <span className={`circle ${`circle-${name}`}`}></span>
-                    <Link
+                    <NavLink
                       className='fs-400'
                       onClick={() => {
                         setToggleMenu(false);
@@ -57,7 +63,7 @@ const Navbar = ({ active, setActive }) => {
                       to={url}
                     >
                       {name}
-                    </Link>
+                    </NavLink>
                   </div>
                   <span className='chevron'>
                     <img src={images.chevron} alt='chevron' />
