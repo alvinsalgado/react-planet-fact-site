@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { data, images } from '../../utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: 'spring', duration: 1.5 },
+  },
+  exit: {
+    opacity: 0,
+    x: '-100vh',
+
+    transition: { ease: 'easeInOut', duration: 1 },
+  },
+};
 const Navbar = ({ active, setActive }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -32,22 +50,21 @@ const Navbar = ({ active, setActive }) => {
         })}
       </ul>
 
-      <button
-        className={`hamburger ${toggleMenu ? 'remove' : ''}`}
-        onClick={() => setToggleMenu(!toggleMenu)}
-      >
-        <img src={images.hamburger} alt='open' />
+      <button className='hamburger' onClick={() => setToggleMenu(!toggleMenu)}>
+        <img
+          src={`${toggleMenu ? images.close : images.hamburger}`}
+          alt='toggle-menu'
+        />
       </button>
-      {toggleMenu && (
-        <div className='navbar-mobile'>
-          <button
-            className='hamburger'
-            onClick={() => setToggleMenu(!toggleMenu)}
+      <AnimatePresence>
+        {toggleMenu && (
+          <motion.ul
+            variants={containerVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            className='navbar-mobile-links'
           >
-            <img src={images.close} alt='close' />
-          </button>
-
-          <ul className='navbar-mobile-links'>
             {links.map((planet, index) => {
               const { id, name, url } = planet;
               return (
@@ -71,9 +88,9 @@ const Navbar = ({ active, setActive }) => {
                 </li>
               );
             })}
-          </ul>
-        </div>
-      )}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

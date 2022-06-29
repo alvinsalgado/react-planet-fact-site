@@ -9,82 +9,76 @@
     background-color: transparent;
     border: 0;
     cursor: pointer;
-
-    &.remove {
-      display: none;
-    }
   }
 
   .navbar-desktop-links {
     display: none;
   }
 }
-.navbar-mobile {
-  &-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    z-index: 100;
-    background-color: $very-darkish-blue;
-    width: 100%;
-    height: calc(100vh - 70px);
+.navbar-mobile-links {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 100;
+  background-color: $very-darkish-blue;
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+
+  li {
     display: flex;
-    flex-direction: column;
-    padding: 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25em 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25em 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    a {
+      transition: all 0.3s ease-in-out;
 
-      a {
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          color: $light-gray;
-        }
+      &:hover {
+        color: $light-gray;
       }
     }
+  }
 
-    .circle {
-      height: 25px;
-      width: 25px;
-      border-radius: 50%;
-      position: relative;
-      top: 6px;
-      margin-right: 1.5625em;
-      display: inline-block;
-    }
-    .circle-mercury {
-      background-color: $light-teal;
-    }
-    .circle-venus {
-      background-color: $light-yellow;
-    }
-    .circle-earth {
-      background-color: $light-purple;
-    }
-    .circle-mars {
-      background-color: $light-orange;
-    }
-    .circle-jupiter {
-      background-color: $dark-red;
-    }
-    .circle-saturn {
-      background-color: $dark-orange;
-    }
-    .circle-uranus {
-      background-color: $dark-teal;
-    }
-    .circle-neptune {
-      background-color: $dark-blue;
-    }
-    .chevron {
-      img {
-        margin-right: 0.5em;
-      }
+  .circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: relative;
+    top: 6px;
+    margin-right: 1.5625em;
+    display: inline-block;
+  }
+  .circle-mercury {
+    background-color: $light-teal;
+  }
+  .circle-venus {
+    background-color: $light-yellow;
+  }
+  .circle-earth {
+    background-color: $light-purple;
+  }
+  .circle-mars {
+    background-color: $light-orange;
+  }
+  .circle-jupiter {
+    background-color: $dark-red;
+  }
+  .circle-saturn {
+    background-color: $dark-orange;
+  }
+  .circle-uranus {
+    background-color: $dark-teal;
+  }
+  .circle-neptune {
+    background-color: $dark-blue;
+  }
+  .chevron {
+    img {
+      margin-right: 0.5em;
     }
   }
 }
