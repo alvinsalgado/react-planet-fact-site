@@ -1,7 +1,13 @@
 .planet-info-container {
-  padding: 0 1.5em;
   text-align: center;
   grid-area: info;
+  position: relative;
+  height: 255px;
+  width: 350px;
+  margin: 0 auto;
+  .planet-info-motion {
+    position: absolute;
+  }
   .planet-name {
     margin-bottom: 0.4em;
   }
@@ -23,6 +29,7 @@
   .planet-info-container {
     grid-area: info;
     padding: 0;
+    height: 345px;
 
     // max-width: 360px;
     margin-right: 3em;
@@ -45,6 +52,7 @@
   .planet-info-container {
     margin: 0;
     align-self: end;
+    height: 370px;
 
     .planet-name {
       margin-bottom: 0.3em;
