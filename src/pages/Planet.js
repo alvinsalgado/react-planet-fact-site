@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Tabs, PlanetImage, PlanetInfo, PlanetFacts } from '../components';
-import { data } from '../utils/index';
+import { planets } from '../utils/index';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -23,8 +23,6 @@ const containerVariants = {
 
 const Planet = ({ active }) => {
   const [activeTab, setActiveTab] = useState('overview');
-
-  const { planets } = data;
 
   const {
     name,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { data, images } from '../../utils';
+import { links, images } from '../../utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const containerVariants = {
@@ -22,8 +22,6 @@ const containerVariants = {
 };
 const Navbar = ({ active, setActive }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-
-  const { links } = data;
 
   return (
     <nav className='navbar'>

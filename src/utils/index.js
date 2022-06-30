@@ -1,4 +1,4 @@
 import images from './images';
-import data from './data';
+import { links, planets } from './data';
 
-export { images, data };
+export { images, links, planets };

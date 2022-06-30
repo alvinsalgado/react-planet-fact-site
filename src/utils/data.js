@@ -1,6 +1,6 @@
 import images from './images';
 
-const links = [
+export const links = [
   {
     id: 1,
     name: 'mercury',
@@ -43,7 +43,7 @@ const links = [
   },
 ];
 
-const planets = [
+export const planets = [
   {
     name: 'Mercury',
     overview: {
@@ -54,7 +54,8 @@ const planets = [
     structure: {
       content:
         "Mercury appears to have a solid silicate crust and mantle overlying a solid, iron sulfide outer core layer, a deeper liquid core layer, and a solid inner core. The planet's density is the second highest in the Solar System at 5.427 g/cm3 , only slightly less than Earth's density.",
-      source: 'https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure',
+      source:
+        'https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure',
     },
     geology: {
       content:
@@ -167,7 +168,8 @@ const planets = [
     geology: {
       content:
         'The best known feature of Jupiter is the Great Red Spot, a persistent anticyclonic storm located 22° south of the equator. It is known to have existed since at least 1831, and possibly since 1665.',
-      source: 'https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices',
+      source:
+        'https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices',
     },
     rotation: '9.93 Hours',
     revolution: '11.86 Years',
@@ -261,5 +263,3 @@ const planets = [
     },
   },
 ];
-
-export default { links, planets };

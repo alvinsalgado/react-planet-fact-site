@@ -27,7 +27,7 @@ import neptune from '../assets/planet-neptune.svg';
 import neptuneInternal from '../assets/planet-neptune-internal.svg';
 import neptuneGeology from '../assets/geology-neptune.png';
 
-export default {
+const images = {
   chevron,
   hamburger,
   close,
@@ -57,3 +57,5 @@ export default {
   neptuneInternal,
   neptuneGeology,
 };
+
+export default images;
